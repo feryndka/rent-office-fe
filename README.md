@@ -61,3 +61,48 @@ function ...() {
 **4. Set Up Component and Wrapper**
 
 Separate the code in `Browse.tsx` into multiple `components` and `wrappers`
+
+##
+
+**5. Set Axios For Access Endpoint API**
+
+Run the following command to install Axios:  
+```bash
+npm install axios
+```
+Implement axios on project
+```bash
+# Use `useState` for get data from backend
+const [..., set...] = useState<...[]>([]);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState<string | null>(null);
+
+# use `useEffect` for set data from backend
+useEffect(() => {
+  axios
+    # Get from API Endpoint
+    .get("...", {
+      headers: {
+        "X-API-KEY": "...",
+      },
+    })
+    .then((response) => {
+      setCities(response.data.data);
+      setLoading(false);
+    })
+    .catch((error) => {
+      setError(error);
+      setLoading(false);
+    });
+}, []);
+```
+
+Create `interface` on folder `types` for implement OOP
+```bash
+export interface .. {
+  id: number;
+  name: string;
+  ...
+}
+```
+
