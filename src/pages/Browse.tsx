@@ -1,7 +1,16 @@
+import { NavLink } from "react-router-dom";
 import BrowseCityWrapper from "../wrappers/BrowseCityWrapper";
 import BrowseOfficeWrapper from "../wrappers/BrowseOfficeWrapper";
 
 export default function Browse() {
+  const navLinks = [
+    { name: "Browse", link: "/" },
+    { name: "Popular", link: "/popular" },
+    { name: "Categories", link: "/categories" },
+    { name: "Events", link: "/events" },
+    { name: "My Booking", link: "/check-booking" },
+  ];
+
   return (
     <>
       <nav className="bg-white">
@@ -10,21 +19,18 @@ export default function Browse() {
             <img src="/assets/images/logos/logo.svg" alt="logo" />
           </a>
           <ul className="flex items-center gap-[50px] w-fit">
-            <li>
-              <a href="">Browse</a>
-            </li>
-            <li>
-              <a href="">Popular</a>
-            </li>
-            <li>
-              <a href="">Categories</a>
-            </li>
-            <li>
-              <a href="">Events</a>
-            </li>
-            <li>
-              <a href="view-booking-details.html">My Booking</a>
-            </li>
+            {navLinks.map((item, index) => (
+              <li key={index}>
+                <NavLink
+                  to={item.link}
+                  className={({ isActive }) =>
+                    isActive ? "text-[#0D903A] font-bold" : "text-black"
+                  }
+                >
+                  {item.name}
+                </NavLink>
+              </li>
+            ))}
           </ul>
           <a
             href="#"
