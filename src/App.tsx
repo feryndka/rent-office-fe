@@ -5,10 +5,13 @@ import BookOffice from "./pages/BookOffice";
 import CityDetails from "./pages/CityDetails";
 import SuccessBooking from "./pages/SuccessBooking";
 import CheckBooking from "./pages/CheckBooking";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
+      {/* Navigasi */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Browse />} />
         <Route path="/office/:slug" element={<Details />} />

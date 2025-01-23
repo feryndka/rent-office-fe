@@ -3,7 +3,6 @@ import { City } from "../types/interface";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import OfficeCard from "../components/OfficeCard";
-import Navbar from "../components/Navbar";
 
 export default function CityDetails() {
   const { slug } = useParams<{ slug: string }>();
@@ -45,7 +44,6 @@ export default function CityDetails() {
 
   return (
     <>
-      <Navbar />
       <header className="flex flex-col w-full">
         <section id="Hero-Banner" className="relative flex h-[434px]">
           <div

@@ -1,13 +1,9 @@
-import Navbar from "../components/Navbar";
 import BrowseCityWrapper from "../wrappers/BrowseCityWrapper";
 import BrowseOfficeWrapper from "../wrappers/BrowseOfficeWrapper";
 
 export default function Browse() {
   return (
     <>
-      {/* Navigasi */}
-      <Navbar />
-
       {/* Main Section */}
       <header className="flex flex-col w-full">
         <section

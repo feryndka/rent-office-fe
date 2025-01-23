@@ -106,3 +106,11 @@ export interface .. {
 }
 ```
 
+##
+
+**6. Set Zod For Validation Form**
+
+Run the following command to install zod:  
+```bash
+npm install zod
+```
