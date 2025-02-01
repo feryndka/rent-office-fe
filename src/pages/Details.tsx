@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Office } from "../types/interface";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import apiClient, { API_URL_STORAGE } from "../services/apiService";
 
 export default function Details() {
   const { slug } = useParams<{ slug: string }>();
@@ -12,12 +12,8 @@ export default function Details() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/api/office/${slug}`, {
-        headers: {
-          "X-API-KEY": "9s8fh3Jjdl93kfJLS83fjsjLKF83jf0L",
-        },
-      })
+    apiClient
+      .get(`/office/${slug}`)
       .then((response) => {
         setOffice(response.data.data);
         setLoading(false);
@@ -40,7 +36,7 @@ export default function Details() {
     return <p>Office not found</p>;
   }
 
-  const baseURL = "http://127.0.0.1:8000/storage";
+  const baseURL = API_URL_STORAGE;
 
   return (
     <>

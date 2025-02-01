@@ -1,7 +1,8 @@
+import { API_URL_STORAGE } from "../services/apiService";
 import { Office } from "../types/interface";
 
 export default function OfficeCard({ office }: OfficeCardProps) {
-  const baseURL = "http://127.0.0.1:8000/storage";
+  const baseURL = API_URL_STORAGE;
 
   return (
     <div className="card">

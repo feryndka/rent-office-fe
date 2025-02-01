@@ -1,7 +1,8 @@
+import { API_URL_STORAGE } from "../services/apiService";
 import { City } from "../types/interface";
 
 export default function CityCard({ city }: CityCardProps) {
-  const baseURL = "http://127.0.0.1:8000/storage";
+  const baseURL = API_URL_STORAGE;
 
   return (
     <div className="card">

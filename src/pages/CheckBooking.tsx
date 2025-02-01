@@ -2,7 +2,10 @@ import { useState } from "react";
 import { BookingDetails } from "../types/interface";
 import { z } from "zod";
 import { viewBookingSchema } from "../types/validationBooking";
-import axios from "axios";
+import apiClient, {
+  API_URL_STORAGE,
+  isAxiosError,
+} from "../services/apiService";
 
 export default function CheckBooking() {
   const [formData, setFormData] = useState({
@@ -20,7 +23,7 @@ export default function CheckBooking() {
 
   const [error, setError] = useState<string | null>(null);
 
-  const baseURL = "http://127.0.0.1:8000/storage";
+  const baseURL = API_URL_STORAGE;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -46,24 +49,16 @@ export default function CheckBooking() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/check-booking",
-        {
-          // The rest of the fields are handled by the backend
-          ...formData,
-        },
-        {
-          headers: {
-            "X-API-KEY": "9s8fh3Jjdl93kfJLS83fjsjLKF83jf0L",
-          },
-        }
-      );
+      const response = await apiClient.post("/check-booking", {
+        // The rest of the fields are handled by the backend
+        ...formData,
+      });
 
       // Handle success (e.g., show a success message or redirect)
       console.log("We are checking your booking:", response.data.data);
       setBookingDetails(response.data.data);
     } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
+      if (isAxiosError(error)) {
         console.log("Error submitting form:", error.message);
         setError(error.message);
       } else {

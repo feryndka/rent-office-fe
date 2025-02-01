@@ -1,10 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
+import { API_URL_STORAGE } from "../services/apiService";
 
 export default function SuccessBooking() {
   const location = useLocation();
   const { office, booking } = location.state;
 
-  const baseURL = "http://127.0.0.1:8000/storage";
+  const baseURL = API_URL_STORAGE;
 
   return (
     <>
@@ -60,7 +61,7 @@ export default function SuccessBooking() {
             Pesanan Anda sedang kami proses, kami akan menginformasikan status
             Anda melalui SMS
           </p>
-          <Link to={'/check-booking'}>
+          <Link to={"/check-booking"}>
             <div className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]">
               <span>View Booking Details</span>
             </div>
