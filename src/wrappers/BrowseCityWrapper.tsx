@@ -54,7 +54,7 @@ export default function BrowseCityWrapper() {
             slidesOffsetAfter={30}
             slidesOffsetBefore={30}
           >
-            {cities.map((city) => (
+            {cities.slice(0, 5).map((city) => (
               <SwiperSlide
                 key={city.id}
                 className="!w-fit first-of-type:pl-[calc((100%-1130px-60px)/2)] last-of-type:pr-[calc((100%-1130px-60px)/2)]"
