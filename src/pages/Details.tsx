@@ -249,7 +249,7 @@ export default function Details() {
             <hr className="border-[#F6F5FD]" />
             <div className="flex flex-col gap-[14px]">
               <Link to={`/office/${office.slug}/book`}>
-                <div className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]">
+                <div className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD] hover:shadow-md">
                   <img
                     src="/assets/images/icons/slider-horizontal-white.svg"
                     className="w-6 h-6"
@@ -258,7 +258,7 @@ export default function Details() {
                   <span>Book This Office</span>
                 </div>
               </Link>
-              <button className="flex items-center justify-center w-full rounded-full border border-[#000929] p-[16px_26px] gap-3 bg-white font-semibold">
+              <button className="flex items-center justify-center w-full rounded-full border-2 p-[16px_26px] gap-3 bg-white font-semibold hover:shadow-md">
                 <img
                   src="/assets/images/icons/save-add.svg"
                   className="w-6 h-6"

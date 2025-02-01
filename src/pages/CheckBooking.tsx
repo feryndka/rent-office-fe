@@ -98,7 +98,7 @@ export default function CheckBooking() {
             <label htmlFor="name" className="font-semibold">
               Booking TRX ID
             </label>
-            <div className="flex items-center rounded-full border border-[#000929] px-5 gap-[10px] transition-all duration-300 focus-within:ring-2 focus-within:ring-[#0D903A]">
+            <div className="flex items-center rounded-full border-2 px-5 gap-[10px] transition-all duration-300 focus-within:ring-2 focus-within:ring-[#0D903A]">
               <img
                 src="assets/images/icons/receipt-text-black.svg"
                 className="w-6 h-6"
@@ -122,7 +122,7 @@ export default function CheckBooking() {
             <label htmlFor="phone" className="font-semibold">
               Phone Number
             </label>
-            <div className="flex items-center rounded-full border border-[#000929] px-5 gap-[10px] transition-all duration-300 focus-within:ring-2 focus-within:ring-[#0D903A]">
+            <div className="flex items-center rounded-full border-2 px-5 gap-[10px] transition-all duration-300 focus-within:ring-2 focus-within:ring-[#0D903A]">
               <img
                 src="assets/images/icons/call-black.svg"
                 className="w-6 h-6"
@@ -145,7 +145,7 @@ export default function CheckBooking() {
           <button
             disabled={isLoading}
             type="submit"
-            className="flex items-center justify-center rounded-full p-[12px_30px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]"
+            className="flex items-center justify-center rounded-full p-[12px_30px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD] hover:shadow-md cursor-pointer"
           >
             <span className="text-nowrap">
               {isLoading ? "Loading..." : "Check Booking"}

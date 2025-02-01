@@ -36,7 +36,7 @@ export default function Browse() {
             <div className="flex items-center gap-5">
               <a
                 href="#"
-                className="flex items-center rounded-full p-[20px_26px] gap-3 bg-[#0D903A]"
+                className="flex items-center rounded-full p-[20px_26px] gap-3 bg-[#0D903A] hover:shadow-md"
               >
                 <img
                   src="/assets/images/icons/slider-horizontal-white.svg"
@@ -49,7 +49,7 @@ export default function Browse() {
               </a>
               <a
                 href="#"
-                className="flex items-center rounded-full border border-[#000929] p-[20px_26px] gap-3 bg-white"
+                className="flex items-center rounded-full border-2 p-[20px_26px] gap-3 bg-white hover:shadow-md"
               >
                 <img
                   src="/assets/images/icons/video-octagon.svg"

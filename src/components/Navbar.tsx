@@ -31,7 +31,7 @@ export default function Navbar() {
         </ul>
         <a
           href="#"
-          className="flex items-center gap-[10px] rounded-full border border-[#000929] py-3 px-5"
+          className="flex items-center gap-[10px] rounded-full border-2 py-3 px-5 hover:shadow-md"
         >
           <img
             src="/assets/images/icons/call.svg"
